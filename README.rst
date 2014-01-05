@@ -109,3 +109,4 @@ RoR RailsAdmin Backend Scaffold
 		1.要注意安裝順序，有時候安裝順序不對會出現一些BUG。
 		2.如果出現 undefined gsub method miss 等訊息就重裝吧！
 		3.也可以考慮根據 Console 的 Error 訊息去增加 gsub 方法。
+		4.修改 .gitignore 將一些排除的檔案提除。
