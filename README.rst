@@ -109,6 +109,10 @@ RoR RailsAdmin Backend Scaffold
 		rails g scaffold todo label:string summary:text
 		# 將產出 controller
 
+		# 注意：
+			如果你只要 JSON API 那就只需要建立 Model、Controller 即可。
+
+
 **問題排除**
 
 	:: 

@@ -1,3 +1,5 @@
+# encoding:utf-8
+
 class TodosController < ApplicationController
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
 
