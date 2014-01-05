@@ -2,6 +2,9 @@
 RoR RailsAdmin Backend Scaffold
 ===============================
 
+1.這是 Rails 4 & Ruby 1.9.3 的專案雛形。
+2.下載下來後要重新 rake db:migrate 再執行 rails s。
+
 **Gemfile**
 
 	::
