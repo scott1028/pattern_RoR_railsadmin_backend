@@ -38,6 +38,23 @@ RoR RailsAdmin Backend Scaffold
 		# Data Migration
 			bundle exec rake db:migrate
 
+		# 註冊好帳號之後關閉 Devise 註冊功能
+			# app/model/user.rb
+				class User < ActiveRecord::Base
+				  # Include default devise modules. Others available are:
+				  # :confirmable, :lockable, :timeoutable and :omniauthable
+				  devise :database_authenticatable,
+				  		 #:registerable,
+				         #:recoverable,
+				         :rememberable,
+				         :trackable,
+				         :validatable
+
+				         # recoverable: send mail for recover user:password Link.
+				         # registerable: enable/disable register
+				end
+
+
 **Carrierwave Uploader 增加中文字支援**
 	
 	::
