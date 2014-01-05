@@ -101,6 +101,13 @@ RoR RailsAdmin Backend Scaffold
 				end
 			end
 
+**自製 API 範例**
+
+	::
+
+		# 使用 rails scaffold 即可
+		rails g scaffold todo label:string summary:text
+		# 將產出 controller
 
 **問題排除**
 

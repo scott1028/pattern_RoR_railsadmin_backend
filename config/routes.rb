@@ -1,4 +1,16 @@
+# encoding:utf-8
+
 RoRRailsAdminScaffold::Application.routes.draw do
+  
+  # 參考：http://api.rubyonrails.org/classes/ActionDispatch/Routing/Mapper/Resources.html
+  # 使用 only option 設定只允許 :index 與 :show Action
+  resources :todos, :only=>[:index,:show]
+  # 將 todo 修改為 JSON API
+  # namespace :todos do
+    # get 'index'
+    # get 'show'
+  # end
+
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.
