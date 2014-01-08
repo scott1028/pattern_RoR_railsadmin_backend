@@ -8,6 +8,9 @@ class Todo3sController < ApplicationController
   # GET /todo3s
   # GET /todo3s.json
   def index
+    # 讓這個 Controller 只會回覆 JSON 格式
+    respond_to :json
+
     @todo3s = Todo3.all
   end
 
