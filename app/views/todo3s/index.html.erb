@@ -1,0 +1,27 @@
+<h1>Listing todo3s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todo3s.each do |todo3| %>
+      <tr>
+        <td><%= todo3.label %></td>
+        <td><%= link_to 'Show', todo3 %></td>
+        <td><%= link_to 'Edit', edit_todo3_path(todo3) %></td>
+        <td><%= link_to 'Destroy', todo3, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Todo3', new_todo3_path %>
