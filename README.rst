@@ -155,7 +155,7 @@ RoR RailsAdmin Backend Scaffold
             respond_to :json                    # 建議寫這樣寫
                 or
             render :json => @model_instace      # 不建議這樣寫(加在Action最後一行)
-            
+
                 ex:
                   def index
                     # 讓這個 Controller 只會回覆 JSON 格式
@@ -172,6 +172,29 @@ RoR RailsAdmin Backend Scaffold
         # application_controller.rb
         protect_from_forgery with: :exception
         # 註銷就是關閉
+
+
+**Ajax Restful CRUD**
+
+    ::
+
+        # public/index.html
+        # 內有展示 JQuery Ajax Restful 的範例！
+            ...
+            $.ajax({
+                url:'/todo3s/'+id.toString()+'.json',
+                type:'put',
+                data:{
+                    todo3:{
+                        label:'ajax put modify'
+                    }
+                },
+                dataType:'json',
+                success:function(res,status,xhr){
+                    console.log(res);
+                }
+            });
+            ...
 
 
 **問題排除**

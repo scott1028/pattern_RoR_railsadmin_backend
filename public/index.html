@@ -9,108 +9,47 @@
 	/api/first_book_api/?format=json
 
 	<script>
-		// get api information
-		var test_get_api=function(){
-			$.ajax({
-				url:'/api/first_book_api/?format=json',
-				type:'get',
-				success:function(res,status,xhr){
-					console.log(res);
-				}
-			});
-		};
-
 		// get list
-		var test_get_list_first_book_api=function(){
-			$.ajax({
-				url:'/api/first_book_api/first_book/?format=json',
-				type:'get',
-				success:function(res,status,xhr){
-					console.log(res);
-				}
-			});
-		};
+			var test_get_list=function(){
+				$.ajax({url:'/todo3s.json',type:'get',dataType:'json',success:function(res,status,xhr){console.log(res);}});
+			}
 
 		// get
-		var test_get_first_book_api_by_id_eq_1=function(){
-			$.ajax({
-				url:'/api/first_book_api/first_book/1?format=json',
-				type:'get',
-				success:function(res,status,xhr){
-					console.log(res);
-				}
-			});
-		};
+			var test_get=function(id){
+				$.ajax({url:'/todo3s/'+id.toString()+'.json',type:'get',dataType:'json',success:function(res,status,xhr){console.log(res);}});
+			}
 
-		// post
-		var test_post_first_book_api=function(){
-			$.ajax({
-				url:'/api/first_book_api/first_book/?format=json',
-				data:{
-					title:'test'
-				},
-				type:'post',
-				success:function(res,status,xhr){
-					console.log(res);
-				}
-			});
-		};
+		// create
+			var test_create=function(fields){
+				// fields include "label:string"
 
-		// put
+				$.ajax({
+					url:'/todo3s',
+					type:'post',
+					data:{
+						todo3:fields
+					},
+					dataType:'json',
+					success:function(res,status,xhr){
+						console.log(res);
+					}
+				});
+			}
 
 		// delete
-		var test_delete_first_book_api_by_id_eq_1=function(){
-			$.ajax({
-				url:'/api/first_book_api/first_book/1?format=json',
-				type:'delete',
-				success:function(res,status,xhr){
-					console.log(res);
-				}
-			});
-		};
+			var test_delete=function(id){
+				$.ajax({url:'/todo3s/'+id.toString()+'.json',type:'delete',dataType:'json',success:function(res,status,xhr){console.log(res);}});
+			}
 
-		/*
-			參考：http://zh.wikipedia.org/wiki/REST
-			定義：/book/api/resouce.py, get,post,put,delete
-				get：id
-				post：data
-				put：id,data
-				delete：id
+		// put
+			var test_put=function(id){
+				$.ajax({url:'/todo3s/'+id.toString()+'.json',type:'put',data:{todo3:{label:'ajax put modify'}},dataType:'json',success:function(res,status,xhr){console.log(res);}});
+			}
 
-			$.ajax({
-				url:'/api/first_book_api/first_book/?format=json',
-				type:'get',
-				success:function(res,status,xhr){
-					console.log(res);
-				}
-			});
-
-			$.ajax({
-				url:'/api/first_book_api/first_book/?format=json',
-				type:'post',
-				data:{....},
-				success:function(res,status,xhr){
-					console.log(res);
-				}
-			});
-
-			$.ajax({
-				url:'/api/first_book_api/first_book/:id/?format=json',
-				type:'put',
-				data:{....},
-				success:function(res,status,xhr){
-					console.log(res);
-				}
-			});
-
-			$.ajax({
-				url:'/api/first_book_api/first_book/:id/?format=json',
-				type:'delete',
-				success:function(res,status,xhr){
-					console.log(res);
-				}
-			});
-		*/
+		// delete
+			var test_delete=function(id){
+				$.ajax({url:'/todo3s/'+id.toString()+'.json',type:'delete',dataType:'json',success:function(res,status,xhr){console.log(res);}});
+			}
 
 	</script>
 </body>
