@@ -154,7 +154,15 @@ RoR RailsAdmin Backend Scaffold
         # 或是直接給 Action 加上也可以強制指定
             respond_to :json                    # 建議寫這樣寫
                 or
-            render :json => @model_instace      # 不建議這樣寫
+            render :json => @model_instace      # 不建議這樣寫(加在Action最後一行)
+            
+                ex:
+                  def index
+                    # 讓這個 Controller 只會回覆 JSON 格式
+                    @todo3s = Todo3.all
+
+                    respond_to :json
+                  end
 
 
 **CSRF Token 保護機制開關**
