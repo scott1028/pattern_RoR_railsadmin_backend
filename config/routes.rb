@@ -1,7 +1,35 @@
 # encoding:utf-8
 
 RoRRailsAdminScaffold::Application.routes.draw do
-  
+  # 指定 Scaffod API, 並起設定預設的回覆就是 JSON
+  resources :todo3s, :defaults=>{format: :json}
+  # Ajax CRUD 範例：
+  #   create
+  #     $.ajax({
+  #       url:'/todo3s',
+  #       type:'post',
+  #       data:{
+  #         todo3:{
+  #           label:'created by ajax'
+  #         }
+  #       },
+  #       dataType:'json',
+  #       success:function(res,status,xhr){
+  #         console.log(res);
+  #       }
+  #     });
+  #
+  #   delete
+  #     $.ajax({url:'/todo3s/1.json',type:'delete',dataType:'json',success:function(res,status,xhr){console.log(res);}});
+
+  #   put
+  #     $.ajax({url:'/todo3s/3.json',type:'put',data:{todo3:{label:'ajax put modify'}},dataType:'json',success:function(res,status,xhr){console.log(res);}});
+  #     
+
+  #   delete
+  #     $.ajax({url:'/todo3s/6.json',type:'delete',dataType:'json',success:function(res,status,xhr){console.log(res);}});
+
+
   # 參考：http://api.rubyonrails.org/classes/ActionDispatch/Routing/Mapper/Resources.html
   # 使用 only option 設定只允許 :index 與 :show Action
   resources :todos, :only=>[:index,:show]
@@ -10,6 +38,7 @@ RoRRailsAdminScaffold::Application.routes.draw do
     # get 'index'
     # get 'show'
   # end
+
 
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
